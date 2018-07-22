@@ -9,29 +9,48 @@ class RektOS
     {
         this.Config = require("./config.json");
         this.Client = new Discord.Client();
-
-        this.CommandManager = new CommandManager(this);
-        this.IrcManager = new IrcManager(this);
     }
 
     Start()
     {
-        print("================================================");
-        print(" >>> RektOS                                     ");
-        print("     > Version:  " + this.Config.Bot.Version     );
-        print("     > Codename: " + this.Config.Bot.Codename    );
-        print("================================================");
+        console.log("================================================");
+        console.log(" >>> RektOS                                     ");
+        console.log("     > Version:  " + this.Config.Bot.Version     );
+        console.log("     > Codename: " + this.Config.Bot.Codename    );
+        console.log("================================================");
 
         if (this.Config.Token === undefined)
         {
             this.Log("ERROR", "Token is absent!");
             return false;
         }
+
+        var self = this;
+        this.Client.on("ready", () =>
+        {
+            console.log("Logged in!");
+
+            self.Client.user.setActivity("RektOS " + self.Config.Bot.Version,
+                                    {type: "PLAYING"});
+        });
+
+        this.CommandManager = new CommandManager(this);
+        this.IrcManager = new IrcManager(this);
+
+        this.CommandManager.Start();
+        this.IrcManager.Start();
+
+        this.Client.login(this.Config.Token);
     }
 
     Log(severity, text)
     {
-        print("[" + severity + "] " + text);
+        console.log("[" + severity.toUpperCase() + "] " + text);
+    }
+
+    GetChangelog(version)
+    {
+        return "TODO: implementation";
     }
 }
 
