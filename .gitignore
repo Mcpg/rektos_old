@@ -1,0 +1,5 @@
+# RektOS .gitignore
+node_modules/
+
+# Don't share the config file!
+rektos/config.json
