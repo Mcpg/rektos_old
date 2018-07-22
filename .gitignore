@@ -1,5 +1,6 @@
 # RektOS .gitignore
 node_modules/
+package-lock.json
 
 # Don't share the config file!
 rektos/config.json
