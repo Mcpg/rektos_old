@@ -1,5 +1,5 @@
 
-const CommandManager = require("./command_manager.js");
+const CommandManager = require("./command_manager/command_manager.js");
 const IrcManager     = require("./irc_manager.js");
 const Discord        = require("discord.js");
 const fs             = require("fs");
