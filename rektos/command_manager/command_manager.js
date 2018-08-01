@@ -25,8 +25,6 @@ class CommandManager
 
     Start()
     {
-        // Register commands
-        
         
         this.RektOS.Client.on("message", this.ProcessMessageFunc());
     }

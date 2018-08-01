@@ -1,0 +1,23 @@
+{
+    "Commands":
+    [
+        {
+            "Name":         "help",
+            "Description":  "Displays available commands in RektOS",
+            "Type":         "command",
+            "Aliases":      [],
+            "Usage":        ["", "<command/category name>"],
+            "Examples":     ["", "help", "about"],
+            "CallbackFile": "help.js"
+        },
+        {
+            "Name":         "about",
+            "Description":  "Displays information about RektOS",
+            "Type":         "command",
+            "Aliases":      [],
+            "Usage":        [""],
+            "Examples":     null,
+            "CallbackFile": "about.js"
+        }
+    ]
+}

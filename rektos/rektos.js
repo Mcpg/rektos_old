@@ -2,6 +2,7 @@
 const CommandManager = require("./command_manager.js");
 const IrcManager     = require("./irc_manager.js");
 const Discord        = require("discord.js");
+const fs             = require("fs");
 
 class RektOS
 {
@@ -51,6 +52,34 @@ class RektOS
     GetChangelog(version)
     {
         return "TODO: implementation";
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    ReadDataFileSync(path)
+    {
+        return fs.ReadFileSync("./data/" + path, "UTF-8");
+    }
+
+    ReadDataFile(path, callback)
+    {
+        return fs.ReadFile("./data/" + path, callback);
+    }
+
+    DataFileExists(path, callback)
+    {
+        return fs.stat("./data/" + path, function(err, stat)
+        {
+            if (err == null)
+            {
+                callback();
+            }
+        });
+    }
+
+    DataFileExistsSync(path)
+    {
+        return fs.existsSync("./data/" + path);
     }
 }
 
