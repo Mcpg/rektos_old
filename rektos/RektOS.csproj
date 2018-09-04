@@ -8,10 +8,12 @@
     <Company>Mcpg</Company>
     <Authors>Mcpg</Authors>
     <Version>0.4</Version>
+    <StartupObject>RektOS.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Discord.Net" Version="1.0.2" />
+    <PackageReference Include="ini-parser" Version="2.5.2" />
   </ItemGroup>
 
 </Project>
