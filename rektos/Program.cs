@@ -2,11 +2,11 @@
 
 namespace RektOS
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("RektOS 0.4.0");
+            Console.WriteLine("Starting up RektOS " + RektOSInfo.Version);
         }
     }
 }
